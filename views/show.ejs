@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>CFI Leaderboard</title>
+		<link rel="stylesheet" href="/css/style.css">
+	</head>
+	<body>
+		<div class="CFI">
+			<img class="logo" src="/images/cfi-logo.png" />
+			<!-- <h2>Code for India</h2> -->
+		</div>
+		<div class="main">
+			<div class="header">
+				<h3>Leaderboard</h3>
+			</div>
+			
+			<div class="profile">
+				<div class="img"><img src="<%= json[0].pic %>" /></div>
+				<div class="name"><%= json[0].name %></div>
+				<div class="points">
+					<div><%= json[0].id %></div>
+					<div><%= json[0].classes %></div>
+					<div><%= json[0].assignment %></div>
+				</div>
+				<div class="label">
+					<div>Rank</div>
+					<div>Classes Attended</div>
+					<div>PRs</div>
+				</div>
+				<div class="discription">
+					<div>
+						<p>
+							<q>
+							<%= json[0].feedback %>
+							</q>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="list">
+				<div class="subhead">
+					<h5>Overall Positions</h5>
+				</div>
+				<% json.forEach((json)=> { %>
+				<div class="container">
+					<span><%= json.id %>.</span>
+					<img src="<%= json.pic %>" />
+					<span class="names"><%= json.name %></span>
+					<span class="attended"><%= json.pts %> Pts</span>
+					<!-- hidden -->
+					<span class="hidden"><%= json.classes %> </span>
+					<span class="hidden"><%= json.assignment %> </span>
+					<span class="hidden"><%= json.id %> </span>
+					<span class="hidden"><%= json.feedback %> </span>
+				</div>
+				<% }) %>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		console.log("hello");
+		let profile = document.querySelector(".img img");
+		let name = document.querySelector(".name");
+		let p1 = document.querySelector(".points div:nth-of-type(1)");
+		let p2 = document.querySelector(".points div:nth-of-type(2)");
+		let p3 = document.querySelector(".points div:nth-of-type(3)");
+		let desc= document.querySelector(".discription q")
+
+		console.log(profile, name, p1, p2, p3);
+
+		let element = document.getElementsByClassName("container");
+		/* console.log(element); */
+
+		for(let i=0; i<element.length; i++){
+			element[i].id = i;
+		}
+
+		let prev;
+
+		for (let i = 0; i < element.length; i++) {
+			element[i].addEventListener("click", (event) => {
+
+				// if ( !localStorage.getItem(prev)){
+					// localStorage.setItem("prev",event.target.id);
+				// }
+				// else{
+					// console.log(document.getElementById(localStorage.getItem("prev")));
+					let ele = event.target.id;
+					name.innerText = element[i].children[2].innerText;
+					profile.src = element[i].children[1].src;
+
+					p1.innerText = element[i].children[6].innerText;
+					p2.innerText = element[i].children[4].innerText;
+					p3.innerText = element[i].children[5].innerText;
+
+					desc.innerText=element[i].children[7].innerText;
+					// element[i].style.backgroundColor = "blue"
+					// document.getElementById(localStorage.getItem("prev")).style.backgroundColor="red"
+				// }
+				// console.log(localStorage.getItem("prev"));
+				// localStorage.setItem("prev", event.target.id)
+
+				// element[i].classList.remove('focused')
+		});
+		}
+
+		// let points = 0;
+
+		// for (let i = 0; i < p3.innerText; i++) {
+		// 	points += 2;
+		// }
+		// for (let i = 0; i < p3.innerText; i++) {
+		// 	points += 2;
+		// }
+
+		// console.log(points);
+	</script>
+</html>

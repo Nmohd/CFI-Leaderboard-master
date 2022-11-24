@@ -1,0 +1,268 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* Font imported */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Yanone+Kaffeesatz:wght@300&display=swap');
+
+.CFI {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 12vh;
+}
+.main {
+	background-color: #d8d8ff;
+	/* display: flex; */
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	height: 80vh;
+	width: 90vh;
+	margin: 0 auto;
+	/* box-shadow: 10px 10px 10px 10px rgb(129, 129, 129); */
+	-webkit-box-shadow: -18px 15px 103px 3px rgba(28, 27, 25, 0.78);
+	-moz-box-shadow: -18px 15px 103px 3px rgba(28, 27, 25, 0.78);
+	box-shadow: -18px 15px 103px 3px rgba(28, 27, 25, 0.78);
+}
+
+.hidden {
+	display: none;
+}
+.header {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	grid-column: 1 / -1;
+	/* border: 2px solid green; */
+	height: 7vh;
+	background-color: rgb(94, 23, 235);
+	color: white;
+	font-size: xx-large;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.logo {
+	padding-right: 20px;
+	width: 245px;
+}
+
+.header h3 {
+	text-align: center;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	grid-auto-flow: column;
+	text-align: center;
+	height: 6.5vh;
+	width: 98%;
+	justify-content: space-around;
+	/* border: 2px solid red; */
+	padding: 4px;
+	padding-top: 4px;
+	/* margin-top: 38px; */
+	border-bottom: 1px solid #8080801a;
+	/* text-align: center; */
+	transition: transform 250ms;
+	font-weight: bold;
+	background-color: #d8d8ff;
+}
+
+.container:hover,
+.focused {
+	background-color: white;
+	transform: translateY(-10px);
+	cursor: pointer;
+	/* border: 2px solid rgb(68, 68, 68); */
+}
+/* .container:active{
+    background-color:white;
+    transform: translateY(-10px);
+    cursor: pointer;
+
+} */
+
+.pic {
+	float: left;
+}
+
+.attended {
+	text-align: end;
+
+	grid-column: 5/-1;
+}
+.container img {
+	/* padding: auto; */
+	border: 2px solid rgb(255, 255, 255);
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	/* vertical-align: middle;
+display: inline-block; */
+}
+.list {
+	/* position: absolute; */
+	grid-column: 4/-1;
+	font-family: 'Lato', sans-serif;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: smaller;
+	/* border: 2px solid yellow; */
+	width: 99%;
+	overflow-x: hidden;
+	background-color: #d8d8ff;
+}
+
+.list::-webkit-scrollbar {
+	display: none;
+}
+
+.img img {
+	height: 18vh;
+	width: 18vh;
+	border: 3px solid #ffffff;
+	/* border: 1px solid red; */
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
+}
+
+.points {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	/* justify-content: space-evenly; */
+	/* border: 1px solid red; */
+	text-align: center;
+	height: 15%;
+	font-size: larger;
+}
+.name {
+	text-align: center;
+}
+
+.subhead {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	background-color: #cbcbff;
+	font-family: 'Lato', sans-serif;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 2vh;
+	display: flex;
+	width: 102%;
+	height: 5vh;
+	/* border: 2px solid red; */
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+/* PROFILE */
+.profile {
+	grid-column: 1 / 4;
+	background-color: rgb(190, 190, 255);
+	padding-top: 15%;
+	width: 100%;
+	font-family: 'Lato', sans-serif;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.profile .name {
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+	font-size: 3vh;
+}
+
+.profile .points {
+	padding-top: 5vh;
+	font-size: 7vh;
+}
+
+.profile .label {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	font-size: larger;
+	text-align: center;
+}
+.box {
+	background-color: rgb(15, 9, 1);
+}
+
+.discription {
+	padding-top: 10vh;
+	text-align: center;
+	font-weight: bold;
+}
+
+.names {
+	grid-column: 3 / 5;
+	text-align: left;
+}
+
+@media screen and (max-width: 890px) {
+	* {
+		width: 100%;
+	}
+	.main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 95vw;
+	}
+
+	.profile {
+		padding: 0%;
+	}
+
+	.header {
+		height: 25vh;
+		background-color: rgb(94, 23, 235);
+	}
+
+	.profile .points {
+		padding: 0%;
+	}
+
+	.profile .name {
+		padding: 0%;
+	}
+
+	.img img {
+		height: 15vh;
+		width: 15vh;
+	}
+
+	.subhead {
+		text-align: center;
+		border-top: 1px solid gray;
+	}
+
+	.discription {
+		padding-top: 4vh;
+	}
+
+	.profile .label {
+		padding-top: 2vh;
+	}
+
+	.img {
+		margin-top: 1vh;
+		margin-bottom: 1vh;
+	}
+
+	.name {
+		margin-bottom: 1vh;
+	}
+
+	.header {
+		justify-content: space-around;
+	}
+}
